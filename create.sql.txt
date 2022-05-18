@@ -1,0 +1,65 @@
+CREATE TABLE kluby
+(
+	id		serial				,
+	nazwa		varchar(32)		NOT NULL,
+	rok_powstania	date			NOT NULL,
+	miasto		varchar(32)		NOT NULL,
+	punkty		int				,
+	CONSTRAINT 	kluby_pk			PRIMARY KEY(id)
+);
+
+CREATE TABLE sedziowie
+(
+	id		serial				,
+	imie		varchar(16)		NOT NULL,
+	nazwisko	varchar(32)		NOT NULL,
+	CONSTRAINT	sedziowie_pk 		PRIMARY KEY(id)
+);
+
+CREATE TABLE mecze
+(
+	id		serial				,
+	data		date				,
+	godzina		time				,
+	gospodarz	int			REFERENCES kluby(id),
+	gosc		int			REFERENCES kluby(id),
+	bramki_gospodarza	int			,
+	bramki_goscia	int				,
+	sedzia_id	int				,
+	CONSTRAINT 	mecze_pk			PRIMARY KEY(id),
+	CONSTRAINT	mecze_fk			FOREIGN KEY(sedzia_id)	REFERENCES sedziowie(id)
+);
+
+CREATE TABLE stadiony
+(
+	id		serial				,
+	nazwa		varchar(64)		NOT NULL,
+	pojemnosc	int			NOT NULL,
+	miasto		varchar(16)		NOT NULL,
+	ulica_i_numer	varchar(64)		NOT NULL,
+	wlasciciel	int				,
+	CONSTRAINT	stadiony_pk 		PRIMARY KEY(id),
+	CONSTRAINT 	stadiony_fk 		FOREIGN KEY(wlasciciel)	REFERENCES kluby(id)
+);
+
+CREATE TABLE trenerzy
+(
+	id		serial				,
+	imie		varchar(16)		NOT NULL,
+	nazwisko	varchar(32)		NOT NULL,
+	klub		int				,
+	CONSTRAINT	trenerzy_pk 		PRIMARY KEY(id),
+	CONSTRAINT 	trenerzy_fk		FOREIGN KEY(klub) 	REFERENCES kluby(id)
+);
+
+CREATE TABLE zawodnicy
+(
+	id		serial				,
+	imie		varchar(16)		NOT NULL,
+	nazwisko	varchar(32)		NOT NULL,
+	pozycja		varchar(32)		NOT NULL,
+	klub 		int				,
+	CONSTRAINT	zawodnicy_pk		PRIMARY KEY(id),
+	CONSTRAINT	zawodnicy_fk		FOREIGN KEY(klub)	REFERENCES kluby(id)
+);
+

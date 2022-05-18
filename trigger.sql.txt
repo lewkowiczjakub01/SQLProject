@@ -1,0 +1,67 @@
+--1 TRIGGER
+CREATE TABLE stare_stadiony(
+id				SERIAL			PRIMARY KEY,	
+nazwa 			varchar(64)		NOT NULL,
+pojemnosc		int				NOT NULL,
+miasto			varchar(64)		NOT NULL,
+ulica_i_numer	varchar(64)		NOT NULL,
+wlasciciel		int				NOT NULL,
+kiedy_zmieniono	TIMESTAMP(6)	NOT NULL
+);
+
+CREATE FUNCTION zmiany_stadionow()
+	RETURNS TRIGGER
+	LANGUAGE PLPGSQL
+	AS
+$$
+BEGIN
+	IF NEW.nazwa <> OLD.nazwa THEN
+		INSERT INTO stare_stadiony(id,nazwa,pojemnosc,miasto,ulica_i_numer,wlasciciel,kiedy_zmieniono)
+		VALUES(OLD.id,OLD.nazwa,OLD.pojemnosc,OLD.miasto,OLD.ulica_i_numer,OLD.wlasciciel,now());
+	END IF;
+	RETURN NEW;
+END;
+$$
+;
+
+CREATE TRIGGER ostatnie_zmiany_stadionow
+BEFORE UPDATE
+ON stadiony
+FOR EACH ROW
+EXECUTE PROCEDURE zmiany_stadionow();
+;
+
+
+--2 TRIGGER
+CREATE TABLE zawodnicy_ktorzy_zmienili_klub(
+id				SERIAL			PRIMARY KEY,	
+imie 			varchar(16)		NOT NULL,
+nazwisko		varchar(32)		NOT NULL,
+poprzedni_klub	int				NOT NULL,
+aktualny_klub	int						,
+kiedy_zmienil	TIMESTAMP(6)	NOT NULL
+);
+
+CREATE FUNCTION zmiany_klubow()
+	RETURNS TRIGGER
+	LANGUAGE PLPGSQL
+	AS
+$$
+BEGIN
+	IF NEW.klub <> OLD.klub THEN
+		INSERT INTO zawodnicy_ktorzy_zmienili_klub(id,imie,nazwisko,poprzedni_klub,aktualny_klub,kiedy_zmienil)
+		VALUES(OLD.id,OLD.imie,OLD.nazwisko,OLD.klub,NEW.klub,now());
+	END IF;
+	RETURN NEW;
+END;
+$$
+;
+
+CREATE TRIGGER zmiany_klubow_zawodnikow
+BEFORE UPDATE
+ON zawodnicy
+FOR EACH ROW
+EXECUTE PROCEDURE zmiany_klubow();
+;
+
+

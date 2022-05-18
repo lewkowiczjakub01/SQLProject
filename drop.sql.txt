@@ -1,0 +1,6 @@
+DROP TABLE stadiony;
+DROP TABLE trenerzy;
+DROP TABLE zawodnicy;
+DROP TABLE mecze;
+DROP TABLE sedziowie;
+DROP TABLE kluby;

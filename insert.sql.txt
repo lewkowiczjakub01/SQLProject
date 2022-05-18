@@ -1,0 +1,117 @@
+--kluby
+INSERT INTO kluby (id, nazwa, rok_powstania, miasto, punkty) VALUES (1, 'FC Barcelona', '1899-11-29', 'Barcelona', 79);
+INSERT INTO kluby (id, nazwa, rok_powstania, miasto, punkty) VALUES (2, 'Real Madryt', '1902-03-06', 'Madryt', 84);
+INSERT INTO kluby (id, nazwa, rok_powstania, miasto, punkty) VALUES (3, 'Atletico Madryt', '1903-04-26', 'Madryt', 86);
+INSERT INTO kluby (id, nazwa, rok_powstania, miasto, punkty) VALUES (4, 'Sevilla', '1905-10-14', 'Sewilla', 77);
+INSERT INTO kluby (id, nazwa, rok_powstania, miasto, punkty) VALUES (5, 'Real Sociedad', '1909-09-07', 'San Sebastian', 62);
+
+--trenerzy
+INSERT INTO trenerzy (id, imie, nazwisko, klub) VALUES (1, 'Ronald', 'Koeman', 1);
+INSERT INTO trenerzy (id, imie, nazwisko, klub) VALUES (2, 'Zinedine', 'Zidane', 2);
+INSERT INTO trenerzy (id, imie, nazwisko, klub) VALUES (3, 'Diego', 'Simeone', 3);
+INSERT INTO trenerzy (id, imie, nazwisko, klub) VALUES (4, 'Julen', 'Lopetegui', 4);
+INSERT INTO trenerzy (id, imie, nazwisko, klub) VALUES (5, 'Imanol', 'Alguacil', 5);
+INSERT INTO trenerzy (id, imie, nazwisko, klub) VALUES (6, 'Pep', 'Guardiola', NULL);
+
+
+--stadiony
+INSERT INTO stadiony (id, nazwa, pojemnosc, miasto, ulica_i_numer, wlasciciel) VALUES (1, 'Camp Nou', 99354, 'Barcelona', 'C. d Arístides Maillol, 12', 1);
+INSERT INTO stadiony (id, nazwa, pojemnosc, miasto, ulica_i_numer, wlasciciel) VALUES (2, 'Estadio Santiago Bernabeu', 81044, 'Madryt', 'Concha Espina 1', 2);
+INSERT INTO stadiony (id, nazwa, pojemnosc, miasto, ulica_i_numer, wlasciciel) VALUES (3, 'Wanda Metropolitano', 68000, 'Madryt', 'Calle de Suecia, 53', 3);
+INSERT INTO stadiony (id, nazwa, pojemnosc, miasto, ulica_i_numer, wlasciciel) VALUES (4, 'Estadio Ramón Sánchez Pizjuán', 43883, 'Sewilla', 'Calle Sevilla Fútbol Club, s/n', 4);
+INSERT INTO stadiony (id, nazwa, pojemnosc, miasto, ulica_i_numer, wlasciciel) VALUES (5, 'Estadio Anoeta', 32076, 'San Sebastian', 'Paseo de Anoeta 1', 5);
+
+--zawodnicy
+--FC BARCELONA
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (1, 'Marc-Andre', 'ter Stegen', 'Bramkarz', 1);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (2, 'Jordi', 'Alba', 'Obronca', 1);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (3, 'Gerard', 'Pique', 'Obronca', 1);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (4, 'Clement', 'Lenglet', 'Obronca', 1);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (5, 'Serginio', 'Dest', 'Obronca', 1);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (6, 'Frenkie', 'de Jong', 'Pomocnik', 1);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (7, 'Sergio', 'Busquets', 'Pomocnik', 1);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (8, 'Pedro', 'Lopez', 'Pomocnik', 1);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (9, 'Ousmane', 'Dembele', 'Skrzydlowy', 1);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (10, 'Leo', 'Messi', 'Napastnik', 1);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (11, 'Antoine', 'Griezmann', 'Skrzydlowy', 1);
+--REAL MADRYT
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (12, 'Thibaut', 'Courtois', 'Bramkarz', 2);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (13, 'Ferland', 'Mendy', 'Obronca', 2);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (14, 'Sergio', 'Ramos', 'Obronca', 2);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (15, 'Raphael', 'Varane', 'Obronca', 2);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (16, 'Dani', 'Carvajal', 'Obronca', 2);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (17, 'Toni', 'Kross', 'Pomocnik', 2);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (18, 'Luka', 'Modric', 'Pomocnik', 2);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (19, 'Carlos', 'Casemiro', 'Pomocnik', 2);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (20, 'Marco', 'Asensio', 'Skrzydlowy', 2);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (21, 'Karim', 'Benzema', 'Napastnik', 2);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (22, 'Vinicius', 'Junior', 'Skrzydlowy', 2);
+--ATLETICO MADRYT
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (23, 'Jan', 'Oblak', 'Bramkarz', 3);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (24, 'Jorge', 'Merodio', 'Obronca', 3);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (25, 'Stefan', 'Savic', 'Obronca', 3);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (26, 'Mario', 'Hermoso', 'Obronca', 3);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (27, 'Kieran', 'Trippier', 'Obronca', 3);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (28, 'Yannick', 'Carrasco', 'Pomocnik', 3);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (29, 'Thomas', 'Lemar', 'Pomocnik', 3);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (30, 'Marcos', 'Llorente', 'Pomocnik', 3);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (31, 'Lucas', 'Trippier', 'Pomocnik', 3);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (32, 'Luis', 'Suarez', 'Napastnik', 3);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (33, 'Angel', 'Correa', 'Napastnik', 3);
+--SEVILLA FC
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (34, 'Tomas', 'Vaclik', 'Bramkarz', 4);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (35, 'Marcos', 'Acuna', 'Obronca', 4);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (36, 'Diego', 'Carlos', 'Obronca', 4);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (37, 'Jules', 'Kounde', 'Obronca', 4);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (38, 'Jesus', 'Navas', 'Obronca', 4);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (39, 'Ivan', 'Rakitic', 'Pomocnik', 4);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (40, 'Fernando', 'Reges', 'Pomocnik', 4);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (41, 'Joan', 'Jordan', 'Pomocnik', 4);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (42, 'Lucas', 'Ocampos', 'Skrzydlowy', 4);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (43, 'Sergi', 'Gomez', 'Napastnik', 4);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (44, 'Jesus', 'Suso', 'Skrzydlowy', 4);
+--REAL SOCIEDAD
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (45, 'Alex', 'Remiro', 'Bramkarz', 5);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (46, 'Nacho', 'Monreal', 'Obronca', 5);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (47, 'Modibo', 'Sagnan', 'Obronca', 5);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (48, 'Aritz', 'Elustondo', 'Obronca', 5);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (49, 'Joseba', 'Zaldua', 'Obronca', 5);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (50, 'David', 'Silva', 'Pomocnik', 5);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (51, 'Martin', 'Zubimendi', 'Pomocnik', 5);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (52, 'Jon', 'Guridi', 'Pomocnik', 5);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (53, 'Mikel', 'Oyarzabal', 'Pomocnik', 5);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (54, 'Cristian', 'Portugues', 'Pomocnik', 5);
+INSERT INTO zawodnicy (id, imie, nazwisko, pozycja, klub) VALUES (55, 'Alexander', 'Isak', 'Napastnik', 5);
+
+--sedziowie
+INSERT INTO sedziowie (id, imie, nazwisko) VALUES (1, 'Estrada', 'Fernandez');
+INSERT INTO sedziowie (id, imie, nazwisko) VALUES (2, 'Carlos', 'Grande');
+INSERT INTO sedziowie (id, imie, nazwisko) VALUES (3, 'Pablo', 'Fuertes');
+INSERT INTO sedziowie (id, imie, nazwisko) VALUES (4, 'Cesar', 'Grado');
+INSERT INTO sedziowie (id, imie, nazwisko) VALUES (5, 'Guillermo', 'Fernandez');
+INSERT INTO sedziowie (id, imie, nazwisko) VALUES (6, 'Jose', 'Montero');
+INSERT INTO sedziowie (id, imie, nazwisko) VALUES (7, 'Javier', 'Rojas');
+INSERT INTO sedziowie (id, imie, nazwisko) VALUES (8, 'Jesus', 'Manzano');
+
+
+--mecze
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (1, '2020-10-24', '16:00', 1,2,1,3,4);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (2, '2021-05-08', '16:15', 1,3,0,0,2);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (3, '2020-12-16', '21:00', 1,5,2,1,1);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (4, '2020-10-04', '21:00', 1,4,1,1,5); 
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (5, '2021-05-09', '21:00', 2,4,2,2,6);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (6, '2021-04-10', '21:00', 2,1,2,1,8);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (7, '2021-03-01', '21:00', 2,5,1,1,4);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (8, '2020-12-12', '21:00', 2,3,2,0,2);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (9, '2020-11-21', '21:00', 3,1,1,0,1);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (10, '2021-01-12', '21:30', 3,4,2,0,2);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (11, '2021-03-07', '16:15', 3,2,1,1,5);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (12, '2021-05-12', '22:00', 3,5,2,1,8);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (13, '2020-12-05', '16:15', 4,2,0,1,6);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (14, '2021-01-09', '14:00', 4,5,3,2,8);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (15, '2021-02-27', '16:15', 4,1,0,2,1);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (16, '2021-04-04', '21:00', 4,3,1,0,4);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (17, '2020-09-20', '21:00', 5,2,0,0,2);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (18, '2020-12-22', '19:45', 5,3,0,2,5);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (19, '2021-03-21', '21:00', 5,1,1,6,1);
+INSERT INTO mecze (id,data,godzina,gospodarz,gosc,bramki_gospodarza,bramki_goscia,sedzia_id) VALUES (20, '2021-04-18', '14:00', 5,4,1,2,6);

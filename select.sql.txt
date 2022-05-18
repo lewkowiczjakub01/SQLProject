@@ -1,0 +1,73 @@
+--Posegreguj nazwy klubów według zdobytych punktow
+SELECT nazwa FROM kluby
+ORDER BY punkty DESC
+;
+
+--Policz ile meczów wygrał gospodarz
+SELECT count(*) AS Wygrane_mecze FROM mecze
+WHERE bramki_gospodarza>bramki_goscia
+;
+
+--Podaj jaki klub trenuje dany trener
+SELECT imie,nazwisko,nazwa 
+FROM (trenerzy INNER JOIN kluby
+	 ON trenerzy.klub=kluby.id)
+;
+
+--Wymień kluby rozpoczynające się słowem "Real"
+SELECT nazwa FROM kluby 
+WHERE nazwa LIKE 'Real%'
+;
+
+--Wymień wszystkich pomocników Realu Sociedad
+SELECT imie,nazwisko 
+FROM (zawodnicy INNER JOIN kluby
+	  ON zawodnicy.klub=kluby.id)
+	  WHERE nazwa LIKE 'Real Sociedad' 
+	  AND
+	  pozycja LIKE 'Pomocnik'
+;
+
+--Sprawdz jaki wynik ile razy padał
+SELECT (bramki_gospodarza, bramki_goscia) AS wynik, count(*) AS ile FROM mecze
+GROUP BY wynik
+ORDER BY ile DESC
+;
+
+--Sprawdz jaki trener nie trenuje żadnego klubu
+SELECT imie,nazwisko FROM trenerzy
+WHERE klub IS NULL
+;
+
+--Sprawdz jacy sedziowie nie sedziowali zadnego meczu
+SELECT imie, nazwisko 
+FROM sedziowie
+WHERE sedziowie.id NOT IN (SELECT sedzia_id FROM mecze)
+;
+
+--Sprawdz kto sedziowal podczas meczow rozgrywanych na Camp Nou
+SELECT imie,nazwisko 
+FROM ((sedziowie INNER JOIN mecze
+	   ON sedziowie.id=mecze.sedzia_id)
+	  INNER JOIN stadiony
+	  ON mecze.gospodarz=stadiony.wlasciciel)
+	  WHERE stadiony.nazwa LIKE 'Camp Nou'
+;
+
+--Usuń trenerów, którzy nie trenują żadnego klubu
+DELETE FROM trenerzy
+WHERE klub IS null
+;
+
+--Usuń sędziów, ktorzy nie sedziowali zadnego meczu
+DELETE FROM sedziowie
+WHERE sedziowie.id NOT IN (SELECT sedzia_id FROM mecze)
+;
+
+--Zmien nazwe klubu Sevilla na Sevilla FC
+UPDATE kluby SET nazwa = 'Sevilla FC'
+WHERE nazwa LIKE 'Sevilla'
+;
+
+
+

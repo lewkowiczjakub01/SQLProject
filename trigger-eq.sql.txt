@@ -1,0 +1,26 @@
+-- 1 TRIGGER
+--Zmiana stadionu FC Barcelony
+UPDATE stadiony
+SET  id=6, nazwa='Camp de Les Corts', pojemnosc=30000, miasto = 'Katalonia', ulica_i_numer = 'Agusti Montal 12'
+WHERE wlasciciel = 1;
+
+--Pozniej mozna sprawdzic jakie stadiony zostaly zmienione i kiedy w bazie danych
+SELECT * FROM stare_stadiony
+;
+
+
+
+-- 2 TRIGGER
+UPDATE zawodnicy
+SET klub=3
+WHERE imie = 'Jordi' AND nazwisko = 'Alba'
+;
+
+UPDATE zawodnicy
+SET klub = 1
+WHERE imie = 'Thomas' AND nazwisko = 'Lemar'
+;
+
+--Mozna zmienic kluby zawodnikom a potem sprawdzic kto i jakie transfery przeprowadzil
+SELECT * FROM zawodnicy_ktorzy_zmienili_klub
+;
